@@ -1,7 +1,7 @@
-package com.kshired.springaws.web.service.posts;
+package com.kshired.springaws.service.posts;
 
-import com.kshired.springaws.web.domain.posts.Posts;
-import com.kshired.springaws.web.domain.posts.PostsRepository;
+import com.kshired.springaws.domain.posts.Posts;
+import com.kshired.springaws.domain.posts.PostsRepository;
 import com.kshired.springaws.web.dto.PostsListResponseDto;
 import com.kshired.springaws.web.dto.PostsResponseDto;
 import com.kshired.springaws.web.dto.PostsSaveRequestDto;

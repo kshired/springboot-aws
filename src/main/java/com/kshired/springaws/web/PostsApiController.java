@@ -3,7 +3,7 @@ package com.kshired.springaws.web;
 import com.kshired.springaws.web.dto.PostsResponseDto;
 import com.kshired.springaws.web.dto.PostsSaveRequestDto;
 import com.kshired.springaws.web.dto.PostsUpdateRequestDto;
-import com.kshired.springaws.web.service.posts.PostsService;
+import com.kshired.springaws.service.posts.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,6 +1,6 @@
-package com.kshired.springaws.web.domain.posts;
+package com.kshired.springaws.domain.posts;
 
-import com.kshired.springaws.web.domain.BaseTimeEntity;
+import com.kshired.springaws.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

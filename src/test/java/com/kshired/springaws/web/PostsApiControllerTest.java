@@ -1,7 +1,7 @@
 package com.kshired.springaws.web;
 
-import com.kshired.springaws.web.domain.posts.Posts;
-import com.kshired.springaws.web.domain.posts.PostsRepository;
+import com.kshired.springaws.domain.posts.Posts;
+import com.kshired.springaws.domain.posts.PostsRepository;
 import com.kshired.springaws.web.dto.PostsSaveRequestDto;
 import com.kshired.springaws.web.dto.PostsUpdateRequestDto;
 import org.junit.jupiter.api.AfterEach;

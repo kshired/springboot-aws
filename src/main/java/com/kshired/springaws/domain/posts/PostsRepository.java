@@ -1,4 +1,4 @@
-package com.kshired.springaws.web.domain.posts;
+package com.kshired.springaws.domain.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

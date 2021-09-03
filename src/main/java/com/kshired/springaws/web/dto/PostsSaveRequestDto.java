@@ -1,6 +1,6 @@
 package com.kshired.springaws.web.dto;
 
-import com.kshired.springaws.web.domain.posts.Posts;
+import com.kshired.springaws.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
