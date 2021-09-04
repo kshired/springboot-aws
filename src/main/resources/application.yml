@@ -6,6 +6,11 @@ spring:
     url: jdbc:h2:tcp://localhost/~/springaws
     username: sa
     password:
-
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: create
