@@ -37,5 +37,4 @@ out/
 .vscode/
 
 application-oauth.yml
-application-real.yml
 application-real-db.yml
