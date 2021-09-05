@@ -1,45 +1,37 @@
 #!/bin/bash
 
-REPOSITORY=/home/kim/app/step1
-PROJECT_NAME=springboot-aws
+REPOSITORY=/home/kim/app/step2
+PROJECT_NAME=spring-aws
 
-cd $REPOSITORY/$PROJECT_NAME/
+echo "> Build 파일 복사"
 
-echo "> Git pull"
+cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
-git pull
+echo "> 현재 구동중인 애플리케이션 pid 확인"
 
-echo "> Project build start"
+CURRENT_PID=$(pgrep -fl spring-aws | grep jar | awk '{print $1}')
 
-./gradlew build
-
-echo "> Move step1 directory"
-
-cd $REPOSITORY
-
-echo "> Copy build files"
-
-cp $REPOSITORY/$PROJECT_NAME/build/libs/*.jar $REPOSITORY/
-
-echo "> Check current application's pid"
-
-CURRENT_PID=$(pgrep -f ${PROJECT_NAME}.*.jar)
-
-echo "> Current application's pid : $CURRENT_PID"
+echo "현재 구동중인 어플리케이션 pid: $CURRENT_PID"
 
 if [ -z "$CURRENT_PID" ]; then
-	echo "> No application is running"
+    echo "> 현재 구동중인 애플리케이션이 없으므로 종료하지 않습니다."
 else
-	echo "> kill -15 $CURRENT_PID"
-	kill -15 $CURRENT_PID
-	sleep 5
+    echo "> kill -15 $CURRENT_PID"
+    kill -15 $CURRENT_PID
+    sleep 5
 fi
 
-echo "> Deploy new application"
+echo "> 새 어플리케이션 배포"
 
-JAR_NAME=$(ls -tr $REPOSITORY/ | grep jar | tail -n 1)
+JAR_NAME=$(ls -tr $REPOSITORY/*.jar | tail -n 1)
 
-echo "> JAR Name : $JAR_NAME"
+echo "> JAR Name: $JAR_NAME"
+
+echo "> $JAR_NAME 에 실행권한 추가"
+
+chmod +x $JAR_NAME
+
+echo "> $JAR_NAME 실행"
 
 nohup java -jar \
     -Dspring.config.location=classpath:/application.yml,classpath:/application-real.yml,/home/kim/app/application-oauth.yml,/home/kim/app/application-real-db.yml \
