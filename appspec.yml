@@ -17,7 +17,7 @@ hooks:
       timeout: 60
       runas: kim
   ApplicationStart:
-    - location: deploy.sh
+    - location: start.sh
       timeout: 60
       runas: kim
   ValidateService:
