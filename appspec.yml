@@ -4,3 +4,15 @@ files:
   - source: /
     destination: /home/kim/app/step2/zip/
     overwrite: yes
+
+permissions:
+  - object: /
+    pattern: "**"
+    owner: kim
+    group: kim
+
+hooks:
+  ApplicationStart:
+    - location: deploy.sh
+      timeout: 60
+      runas: kim
